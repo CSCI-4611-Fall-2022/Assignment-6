@@ -35,8 +35,8 @@ export class Billboard extends gfx.Transform3
         this.screenPath.push(new gfx.Vector2(deviceCoords.x, deviceCoords.y));
         
         this.vertices = [];
-        this.vertices.push(new gfx.Vector3(deviceCoords.x, deviceCoords.y, -1));
-        this.vertices.push(new gfx.Vector3(deviceCoords.x, deviceCoords.y, -1));
+        this.vertices.push(new gfx.Vector3(deviceCoords.x, deviceCoords.y, -0.999));
+        this.vertices.push(new gfx.Vector3(deviceCoords.x, deviceCoords.y, -0.999));
 
         this.indices = [];
 
@@ -70,8 +70,8 @@ export class Billboard extends gfx.Transform3
             const vertex2 = gfx.Vector2.add(newPoint, strokeVector);
             
             const nextIndex = this.vertices.length;
-            this.vertices.push(new gfx.Vector3(vertex1.x, vertex1.y, -1));
-            this.vertices.push(new gfx.Vector3(vertex2.x, vertex2.y, -1));
+            this.vertices.push(new gfx.Vector3(vertex1.x, vertex1.y, -0.999));
+            this.vertices.push(new gfx.Vector3(vertex2.x, vertex2.y, -0.999));
 
             this.indices.push(nextIndex, nextIndex + 1, nextIndex - 2);
             this.indices.push(nextIndex - 1, nextIndex - 2, nextIndex + 1);
